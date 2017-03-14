@@ -3,8 +3,8 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  popDelay = 5000
-  popTime = 1000
+  popDelay = 10000
+  popTime = 2000
 
   $('.critter-background').each ->
     $critter = $(this)

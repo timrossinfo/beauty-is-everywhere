@@ -6,10 +6,8 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Colours</th>
       <th>Happy little trees</th>
       <th>Cabin</th>
-      <th>River size</th>
       <th>Snowy mountains</th>
       <th>Critters</th>
       <th colspan="3"></th>
@@ -20,10 +18,8 @@
     <% @episodes.each do |episode| %>
       <tr>
         <td><%= episode.name %></td>
-        <td><%= episode.colours %></td>
         <td><%= episode.happy_little_trees %></td>
         <td><%= episode.cabin %></td>
-        <td><%= episode.river_size %></td>
         <td><%= episode.snowy_mountains %></td>
         <td><%= episode.critters %></td>
         <td><%= link_to 'Show', episode %></td>

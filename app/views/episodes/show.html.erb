@@ -23,7 +23,7 @@
 <% end %>
 
 <div class="forest">
-  <% 1.upto(@episode.happy_little_trees) do |number| %>
+  <% 1.upto(@episode.happy_little_trees.to_i) do |number| %>
     <% if @episode.cabin? && number == @episode.happy_little_trees/3 %>
       🏡
     <% end %>
