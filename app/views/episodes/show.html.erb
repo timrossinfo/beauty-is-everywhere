@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @episode.name %>
+</p>
+
+<p>
+  <strong>Colours:</strong>
+  <%= @episode.colours %>
+</p>
+
+<p>
+  <strong>Happy little trees:</strong>
+  <%= @episode.happy_little_trees %>
+</p>
+
+<p>
+  <strong>Cabin:</strong>
+  <%= @episode.cabin %>
+</p>
+
+<p>
+  <strong>River size:</strong>
+  <%= @episode.river_size %>
+</p>
+
+<p>
+  <strong>Snowy mountains:</strong>
+  <%= @episode.snowy_mountains %>
+</p>
+
+<p>
+  <strong>Critters:</strong>
+  <%= @episode.critters %>
+</p>
+
+<%= link_to 'Edit', edit_episode_path(@episode) %> |
+<%= link_to 'Back', episodes_path %>

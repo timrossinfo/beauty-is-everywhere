@@ -1,0 +1,52 @@
+<%= form_for(episode) do |f| %>
+  <% if episode.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(episode.errors.count, "error") %> prohibited this episode from being saved:</h2>
+
+      <ul>
+      <% episode.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :colours %>
+    <%= f.text_field :colours %>
+  </div>
+
+  <div class="field">
+    <%= f.label :happy_little_trees %>
+    <%= f.number_field :happy_little_trees %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cabin %>
+    <%= f.check_box :cabin %>
+  </div>
+
+  <div class="field">
+    <%= f.label :river_size %>
+    <%= f.text_field :river_size %>
+  </div>
+
+  <div class="field">
+    <%= f.label :snowy_mountains %>
+    <%= f.number_field :snowy_mountains %>
+  </div>
+
+  <div class="field">
+    <%= f.label :critters %>
+    <%= f.number_field :critters %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
