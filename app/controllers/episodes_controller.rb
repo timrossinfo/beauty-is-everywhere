@@ -23,7 +23,10 @@ class EpisodesController < ApplicationController
   def create
     @episode = Episode.new(episode_params)
 
-    if @episode.save
+    if @episode.snowy_mountains.to_i < 0 || @episode.snowy_mountains.to_i > 100
+      @episode.errors.add :snowy_mountains, "must be a percentage"
+      render :new
+    elsif @episode.save
       redirect_to @episode, notice: 'Episode was successfully created.'
     else
       render :new
@@ -32,7 +35,10 @@ class EpisodesController < ApplicationController
 
   # PATCH/PUT /episodes/1
   def update
-    if @episode.update(episode_params)
+    if episode_params[:snowy_mountains].to_i < 0 || episode_params[:snowy_mountains].to_i > 100
+      @episode.errors.add :snowy_mountains, "must be a percentage"
+      render :edit
+    elsif @episode.update(episode_params)
       redirect_to @episode, notice: 'Episode was successfully updated.'
     else
       render :edit
@@ -41,8 +47,7 @@ class EpisodesController < ApplicationController
 
   # DELETE /episodes/1
   def destroy
-    @episode.destroy
-    redirect_to episodes_url, notice: 'Episode was successfully destroyed.'
+    redirect_to episodes_url, notice: "You can't destroy joy."
   end
 
   private

@@ -3,20 +3,21 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $ ->
-  popTime = 5000
+  popDelay = 5000
+  popTime = 1000
 
   $('.critter-background').each ->
     $critter = $(this)
 
-    rand = ->
-      Math.round(Math.random() * (popTime - 500)) + 500
+    rand = (baseTime) ->
+      Math.round(Math.random() * (baseTime - 500)) + 500
 
     popOut = ->
       $critter.animate(left: 0)
-      setTimeout popIn, rand()
+      setTimeout popIn, rand(popTime)
 
     popIn = ->
       $critter.animate(left: -100)
-      setTimeout popOut, rand()
+      setTimeout popOut, rand(popDelay)
 
-    setTimeout popOut, rand()
+    setTimeout popOut, rand(popDelay)
