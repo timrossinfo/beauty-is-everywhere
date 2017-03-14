@@ -17,3 +17,7 @@
 .critter-background {
   background-url: url("/assets/squirrel.jpg");
 }
+
+.forest {
+  font-size: 20pt;
+}
