@@ -58,6 +58,6 @@ class EpisodesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def episode_params
-      params.require(:episode).permit(:name, :colours, :happy_little_trees, :cabin, :river_size, :snowy_mountains, :critters)
+      params.require(:episode).permit(:name, :colours, :happy_little_trees, :cabin, :river_size, :snowy_mountains, :critters, :new_series_name, :series_id)
     end
 end

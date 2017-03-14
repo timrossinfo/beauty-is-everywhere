@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Name</th>
+      <th>Series</th>
       <th>Happy little trees</th>
       <th>Cabin</th>
       <th>Snowy mountains</th>
@@ -18,6 +19,7 @@
     <% @episodes.each do |episode| %>
       <tr>
         <td><%= episode.name %></td>
+        <td><%= episode.series.name if episode.series %></td>
         <td><%= episode.happy_little_trees %></td>
         <td><%= episode.cabin %></td>
         <td><%= episode.snowy_mountains %></td>

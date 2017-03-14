@@ -12,6 +12,21 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :series %>
+    <% Series.all.each do |series| %>
+      <label style="font-weight: normal">
+        <%= f.radio_button :series_id, series.id %>
+        <%= series.name %>
+      </label>
+    <% end %>
+    <label style="font-weight: normal">
+      <%= f.radio_button :series_id, '' %>
+      Other
+      <%= f.text_field :new_series_name, placeholder: 'Enter new series name…' %>
+    </label>
+  </div>
+
+  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
@@ -22,12 +37,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :cabin %>
+    <%= f.label :cabin? %>
     <%= f.check_box :cabin %>
   </div>
 
   <div class="field">
-    <%= f.label :snowy_mountains %>
+    <%= f.label :snowy_mountains, "Mountain %" %>
     <%= f.number_field :snowy_mountains %>
   </div>
 

@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h3><%= @episode.name %></h3>
+<h3>
+  <%= @episode.name %><br>
+  <small><%= @episode.series.name if @episode.series %></small>
+</h3>
 
 <div class="canvas" style="font: 8px/4px monospace">
   <% if @episode.snowy_mountains.present? %>
