@@ -10,5 +10,9 @@ private
     if critters == 1
       errors.add :critters, "gotta have friends. Like I always say, everyone needs a friend."
     end
+
+    if happy_little_trees == 1
+      errors.add :happy_little_trees, "gotta have friends. Like I always say, everyone needs a friend."
+    end
   end
 end
