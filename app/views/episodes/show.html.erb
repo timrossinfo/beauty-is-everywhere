@@ -1,39 +1,25 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @episode.name %>
-</p>
+<h3><%= @episode.name %></h3>
+<div class="canvas" style="font: 8px/4px monospace">
+  <% if @episode.snowy_mountains.present? %>
+    <%= paint_3peak_mountain %>
+  <% end %>
+</div>
 
-<p>
-  <strong>Colours:</strong>
-  <%= @episode.colours %>
-</p>
 
-<p>
-  <strong>Happy little trees:</strong>
-  <%= @episode.happy_little_trees %>
-</p>
-
-<p>
-  <strong>Cabin:</strong>
-  <%= @episode.cabin %>
-</p>
-
-<p>
-  <strong>River size:</strong>
-  <%= @episode.river_size %>
-</p>
-
-<p>
-  <strong>Snowy mountains:</strong>
-  <%= @episode.snowy_mountains %>
-</p>
-
-<p>
-  <strong>Critters:</strong>
-  <%= @episode.critters %>
-</p>
+<% @episode.critters.times do %>
+  <% @critter_count = @critter_count.to_i + 1 %>
+  <%= image_tag "squirrel.jpg",
+    class: 'critter-background',
+    width: 100,
+    style: "
+      position: fixed;
+      top:  #{150 * @critter_count}px;
+      left: -100px;
+    "
+  %>
+<% end %>
 
 <%= link_to 'Edit', edit_episode_path(@episode) %> |
 <%= link_to 'Back', episodes_path %>
