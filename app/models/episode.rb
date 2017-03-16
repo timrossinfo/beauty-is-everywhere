@@ -8,23 +8,23 @@ class Episode < ActiveRecord::Base
   validates :name, presence: true, uniqueness: true
   validates_numericality_of :critters, less_than: 4, allow_blank: true
 
-  validate :must_have_friends
+  validate :must_have_critters, :must_have_trees
 
 private
 
-  def must_have_friends
-    if critters == 1
-      errors.add :critters, "gotta have friends. Like I always say, everyone needs a friend."
-    end
+  def must_have_critters
+    return unless critters == 1
+    errors.add :critters, "gotta have friends. Like I always say, everyone needs a friend."
+  end
 
-    if happy_little_trees == 1
-      errors.add :happy_little_trees, "gotta have friends. Like I always say, everyone needs a friend."
-    end
+  def must_have_trees
+    return unless happy_little_trees == 1
+    errors.add :happy_little_trees, "gotta have friends. Like I always say, everyone needs a friend."
   end
 
   def check_new_series
     return unless series.nil? && new_series_name.present?
 
-    self.series = Series.create name: new_series_name
+    create_series name: new_series_name
   end
 end
