@@ -10,6 +10,8 @@ class Episode < ActiveRecord::Base
 
   validate :must_have_critters, :must_have_trees
 
+  validates_inclusion_of :snowy_mountains, in: 0..100, message: "must be a percentage", allow_nil: true
+
 private
 
   def must_have_critters
