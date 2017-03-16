@@ -6,7 +6,7 @@ class Episode < ActiveRecord::Base
   before_validation :check_new_series
 
   validates :name, presence: true, uniqueness: true
-  validates_numericality_of :critters, less_than: 4
+  validates_numericality_of :critters, less_than: 4, allow_blank: true
 
   validate :must_have_friends
 
