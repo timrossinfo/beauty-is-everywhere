@@ -7,7 +7,7 @@
 
 <div class="canvas" style="font: 8px/4px monospace">
   <% if @episode.snowy_mountains.present? %>
-    <%= paint_3peak_mountain %>
+    <%= paint_3peak_mountain(@episode.snowy_mountains) %>
   <% end %>
 </div>
 
