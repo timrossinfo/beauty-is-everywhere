@@ -6,10 +6,6 @@ module QuotesHelper
   private
 
   def quotes
-    @quotes ||= load_quotes.split("\n")
-  end
-
-  def load_quotes
-    File.open(Rails.root.join("db", "quotes.txt"), "rb").read
+    @quotes ||= Rails.root.join("db", "quotes.txt").read.split("\n")
   end
 end
